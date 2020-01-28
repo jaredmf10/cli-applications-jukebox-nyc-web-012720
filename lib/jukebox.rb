@@ -26,11 +26,11 @@ end
 
 def play(songs)
   puts "Please enter a song name or number:"
-  choice = gets.strip
-  if choice.to_i >= 1 && choice.to_i <= songs.length
+  response = gets.chomp
+  if response.to_i >= 1 && response.to_i <= songs.length
     puts "Playing #{songs[response.to_i-1]}"
-  elsif songs.include?(choice)
-    puts "Playing #{songs.find{|song| song == choice}}"
+  elsif songs.include?(response)
+    puts "Playing #{songs.find{|song| song == response}}"
   else
     puts "Invalid input, please try again"
   end
